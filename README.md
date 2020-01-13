@@ -1,4 +1,4 @@
-# Dump and Restore Elastic Indices
+# Dump and Restore Elastic Indices on Disk
 
 Sometimes could be helpful to dump the documents in an Elastic index on disk so that can be "cold" stored and eventually restored later. [ElasticDumper](https://github.com/pierluigi-failla/elastic_dumper/blob/master/dumper.py) allows to dump on disk a set of zipped files containing an index (or a part of it) and if necessary allows to restore it later.
 
