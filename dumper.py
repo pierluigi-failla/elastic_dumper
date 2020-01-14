@@ -122,7 +122,7 @@ class ElasticDumper(object):
         data_path = os.path.join(dump_path, 'data')
         if not os.path.exists(data_path):
             os.makedirs(data_path)
-        json.dump(self.get_mapping(index_name=self._index_name, doc_type=self._doc_type), open(os.path.join(dump_path, 'mapping.json'), 'w'))
+        json.dump(self.get_mapping(index_name=self._index, doc_type=self._doc_type), open(os.path.join(dump_path, 'mapping.json'), 'w'))
         docs_count = 0
         count = 0
         buffer = []
