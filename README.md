@@ -15,7 +15,7 @@ Easy like:
           },
       },
     }
-    dumper.dump(query=query, dump_path='my_index_dump')
+    dumper.dump(query=query, dump_path='my_index_dump', raw=True)
   
 this will create a folder named `my_index_dump` which contains:
   - a `mapping.json` file which contains the specific mapping for the index 
