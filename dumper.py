@@ -108,11 +108,12 @@ class ElasticDumper(object):
         """
         
         def _store(buffer, count, data_path):
-            fn = os.path.join(data_path, f'data_{count:05d}.json')  # forse count va paddato diversamente
+            # TODO: maybe padding (06d) should be improved to be dynamic
+            fn = os.path.join(data_path, f'data_{count:06d}.json')
             json.dump(buffer, open(fn, 'w'))
-            zip_fn = os.path.join(data_path, f'data_{count:05d}.zip')
+            zip_fn = os.path.join(data_path, f'data_{count:06d}.zip')
             zip_file = ZipFile(zip_fn, mode='w', compression=ZIP_DEFLATED)
-            zip_file.write(fn, arcname=f'data_{count:05d}.json')
+            zip_file.write(fn, arcname=f'data_{count:06d}.json')
             zip_file.close()
             os.remove(fn)
             logging.info(f'stored: {zip_fn}')
